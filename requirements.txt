@@ -1,0 +1,4 @@
+Flask==3.0.3
+
+# Uncomment the line below once you connect a real translation API
+# deep-translator==1.11.4

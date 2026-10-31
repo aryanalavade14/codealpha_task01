@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TranslaAI — AI-Powered Multilingual Language Translator</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="bg-orb orb-1"></div>
+<div class="bg-orb orb-2"></div>
+<div class="bg-orb orb-3"></div>
+
+<!-- NAVIGATION -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="#home" class="brand">✦ TranslaAI</a>
+    <div class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#translator">Translator</a>
+      <a href="#features">Features</a>
+      <a href="#about">About</a>
+    </div>
+    <a href="#translator" class="btn btn-primary btn-nav">Launch Translator →</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <span class="eyebrow">AI &amp; NLP Internship Project</span>
+      <h1>Break Language Barriers with AI</h1>
+      <p class="hero-sub">Translate your ideas instantly across languages with a fast, intelligent and intuitive AI-powered translation experience.</p>
+      <div class="hero-buttons">
+        <a href="#translator" class="btn btn-primary">Start Translating →</a>
+        <a href="#features" class="btn btn-ghost">Explore Features</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="lang-card card-1">
+        <span class="flag">🇬🇧</span> English <span class="arrow">→</span> <span class="flag">🇮🇳</span> Hindi
+      </div>
+      <div class="lang-card card-2">
+        <span class="flag">🇬🇧</span> English <span class="arrow">→</span> <span class="flag">🇮🇳</span> Marathi
+      </div>
+      <div class="lang-card card-3">
+        <span class="flag">🇬🇧</span> English <span class="arrow">→</span> <span class="flag">🇫🇷</span> French
+      </div>
+      <div class="lang-card card-4">
+        <span class="flag">🇬🇧</span> English <span class="arrow">→</span> <span class="flag">🇯🇵</span> Japanese
+      </div>
+      <div class="glow-core"></div>
+    </div>
+  </div>
+</section>
+
+<!-- TRANSLATOR -->
+<section class="translator-section" id="translator">
+  <div class="section-head">
+    <h2>AI Translator Workspace</h2>
+    <p>Type your text, choose your languages, and let TranslaAI do the rest.</p>
+  </div>
+
+  <div class="workspace glass">
+    <div class="lang-controls">
+      <div class="lang-select-wrap">
+        <label>Source Language</label>
+        <select id="sourceLang" class="lang-select"></select>
+      </div>
+
+      <button class="swap-btn" id="swapBtn" title="Swap languages">⇄</button>
+
+      <div class="lang-select-wrap">
+        <label>Target Language</label>
+        <select id="targetLang" class="lang-select"></select>
+      </div>
+    </div>
+
+    <div class="panels">
+      <div class="panel glass-inner">
+        <div class="panel-head">
+          <span id="sourceLangLabel">English</span>
+        </div>
+        <textarea id="sourceText" maxlength="5000" placeholder="Type or paste your text here..."></textarea>
+        <div class="panel-foot">
+          <span class="char-count"><span id="charCount">0</span> / 5000 characters</span>
+          <div class="panel-actions">
+            <button class="icon-btn" id="voiceBtn" title="Voice input">🎤 Voice</button>
+            <button class="icon-btn" id="clearBtn" title="Clear text">🗑 Clear</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel glass-inner">
+        <div class="panel-head">
+          <span id="targetLangLabel">Hindi</span>
+        </div>
+        <div class="result-area" id="resultArea">
+          <span class="placeholder-text">Your translation will appear here...</span>
+        </div>
+        <div class="panel-foot">
+          <span></span>
+          <div class="panel-actions">
+            <button class="icon-btn" id="copyBtn" title="Copy translation">📋 Copy</button>
+            <button class="icon-btn" id="listenBtn" title="Listen to translation">🔊 Listen</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="translate-btn-wrap">
+      <button class="btn btn-translate" id="translateBtn">
+        <span id="translateBtnText">✦ Translate with AI</span>
+        <span class="loader" id="loader" hidden></span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features-section" id="features">
+  <div class="section-head">
+    <h2>Everything You Need to Communicate Globally</h2>
+  </div>
+  <div class="feature-grid">
+    <div class="feature-card glass">
+      <div class="feature-icon">⚡</div>
+      <h3>Instant Translation</h3>
+      <p>Translate text quickly through an online translation service.</p>
+    </div>
+    <div class="feature-card glass">
+      <div class="feature-icon">🌍</div>
+      <h3>Multiple Languages</h3>
+      <p>Communicate across many languages.</p>
+    </div>
+    <div class="feature-card glass">
+      <div class="feature-icon">🔊</div>
+      <h3>Listen &amp; Speak</h3>
+      <p>Use text-to-speech for translated content.</p>
+    </div>
+    <div class="feature-card glass">
+      <div class="feature-icon">📋</div>
+      <h3>One-Click Copy</h3>
+      <p>Copy translated text instantly.</p>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-section">
+  <div class="section-head">
+    <h2>How It Works</h2>
+  </div>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">01</div>
+      <h3>Enter Text</h3>
+      <p>Enter or paste the text you want translated.</p>
+    </div>
+    <div class="step-line"></div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <h3>Choose Languages</h3>
+      <p>Select the source and target languages.</p>
+    </div>
+    <div class="step-line"></div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <h3>Translate</h3>
+      <p>Our application sends the request to the translation service and displays the result.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats-section">
+  <div class="stats-strip glass">
+    <div class="stat"><span class="stat-num">12+</span><span class="stat-label">Languages</span></div>
+    <div class="stat"><span class="stat-num">5000</span><span class="stat-label">Character Limit</span></div>
+    <div class="stat"><span class="stat-num">AI</span><span class="stat-label">Powered</span></div>
+    <div class="stat"><span class="stat-num">Real-Time</span><span class="stat-label">Translator</span></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section" id="about">
+  <div class="about-inner glass">
+    <span class="eyebrow">Built as an AI &amp; NLP Internship Project</span>
+    <h2>About TranslaAI</h2>
+    <p>TranslaAI is a multilingual translator built to explore the core building blocks of a modern AI product: Natural Language Processing, API integration, and a clean, responsive interface. The project pairs a lightweight Flask backend with a hand-built frontend to demonstrate how a real-world translation tool comes together, end to end.</p>
+    <div class="about-tags">
+      <span class="tag">Natural Language Processing</span>
+      <span class="tag">API Integration</span>
+      <span class="tag">Flask</span>
+      <span class="tag">JavaScript</span>
+      <span class="tag">Responsive Web Design</span>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="brand">✦ TranslaAI</span>
+      <p>Breaking language barriers through technology.</p>
+    </div>
+    <div class="footer-links">
+      <a href="#home">Home</a>
+      <a href="#translator">Translator</a>
+      <a href="#features">Features</a>
+      <a href="#about">About</a>
+    </div>
+  </div>
+  <div class="footer-bottom">AI Language Translator • Internship Project</div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
